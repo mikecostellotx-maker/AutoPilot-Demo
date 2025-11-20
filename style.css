@@ -1,0 +1,213 @@
+/* ----------------------------------------------------
+   AutoPilot v3 · Stylesheet
+   Clean, dark UI tuned for readability in flight ops
+----------------------------------------------------- */
+
+:root {
+  --bg: #111418;
+  --panel-bg: #1a1f24;
+  --card-bg: #242a31;
+  --border: #2f363f;
+  --text: #ffffff;
+  --text-soft: #c8d1dc;
+  --accent: #4ea1ff;
+  --accent-soft: #2d66a8;
+  --danger: #ff6262;
+  --success: #5fcf7c;
+
+  --radius: 12px;
+  --shadow: 0 2px 7px rgba(0,0,0,0.35);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+/* ------------------ Layout ------------------ */
+
+#app-shell {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  background: var(--panel-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-icon img {
+  width: 44px;
+  height: 44px;
+}
+
+.titles .app-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.titles .app-sub {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.meta-block {
+  text-align: right;
+}
+
+.range-label {
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: var(--text-soft);
+}
+
+.sync-btn {
+  background: var(--accent);
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+
+.sync-btn:hover {
+  background: var(--accent-soft);
+}
+
+.main-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  overflow: hidden;
+}
+
+/* ------------------ Left Panel (Trips List) ------------------ */
+
+.trips-panel {
+  background: var(--panel-bg);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.panel-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.trip-list {
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.trip-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: border 0.15s ease;
+}
+
+.trip-card:hover {
+  border-color: var(--accent);
+}
+
+.trip-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.trip-meta {
+  margin-top: 8px;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+}
+
+/* ------------------ Right Panel ------------------ */
+
+.detail-panel {
+  padding: 20px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+.card-hidden {
+  display: none;
+}
+
+.empty-state {
+  text-align: center;
+  margin-top: 80px;
+  color: var(--text-soft);
+}
+
+.empty-head {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.45);
+  padding: 20px;
+}
+
+/* ------------------ Recommendation Bars ------------------ */
+
+.score-bar {
+  margin-top: 14px;
+  background: #15191d;
+  height: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  background: var(--accent);
+}
+
+/* ------------------ Footer ------------------ */
+
+.footer-bar {
+  background: var(--panel-bg);
+  border-top: 1px solid var(--border);
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoPilot · Crew Pairing</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div id="app-shell">
+    <!-- Header -->
+    <header class="top-bar">
+      <div class="brand-block">
+        <div class="app-icon">
+          <img src="./assets/autopilot-logo.png" alt="AutoPilot Logo" />
+        </div>
+
+        <div class="titles">
+          <div class="app-name">AutoPilot</div>
+          <div class="app-sub">Crew Pairing Decision Support</div>
+        </div>
+      </div>
+
+      <div class="meta-block">
+        <div style="display:flex; gap:10px;">
+          <button class="sync-btn" id="syncBtn">Sync MySky</button>
+          <button class="sync-btn" id="balanceBtn">Auto-Balance Month</button>
+        </div>
+        <div class="range-label">Window: Now → +30 Days</div>
+      </div>
+    </header>
+
+    <main class="main-grid">
+      <!-- LEFT: Trips list -->
+      <section class="trips-panel">
+        <div class="panel-header">
+          <div class="panel-title">Trips Needing Pairing (Next 30 Days)</div>
+        </div>
+
+        <div id="tripList" class="trip-list">
+          <!-- Trip cards injected by JS -->
+        </div>
+      </section>
+
+      <!-- RIGHT: Detail / Recommendations / Assign -->
+      <section class="detail-panel">
+        <div id="viewTripDetail" class="card card-hidden"></div>
+        <div id="viewRecommendations" class="card card-hidden"></div>
+        <div id="assignOverlay" class="overlay card-hidden"></div>
+
+        <!-- Default empty state -->
+        <div id="emptyState" class="empty-state">
+          <div class="empty-head">Select a trip to begin</div>
+          <div class="empty-body">
+            AutoPilot will show trip legs, pairing suggestions, and assignment flow here.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-bar">
+      Richardson Aviation · Internal Use Only
+    </footer>
+  </div>
+
+  <!-- ES6 modules -->
+  <script type="module" src="./autopilot.js"></script>
+</body>
+</html>
